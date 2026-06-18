@@ -293,6 +293,9 @@
 
     .button {
       appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-height: 38px;
       border: 1px solid var(--fw-line-strong);
       border-radius: 0;
@@ -302,6 +305,7 @@
       font: inherit;
       font-size: 12px;
       font-weight: 900;
+      text-decoration: none;
       cursor: pointer;
     }
 
@@ -748,6 +752,7 @@
     <div class="toolbar" aria-label="document controls">
       <div class="toolbar-note">本文・表・見出しはMarkdownレポートの全文を変換しています。印刷やPDF保存にも対応します。</div>
       <div class="toolbar-actions">
+        <a class="button primary" href="./quick.html">展示会前クイック版</a>
         <button class="button" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">先頭へ</button>
         <button class="button primary" type="button" onclick="window.print()">印刷 / PDF保存</button>
       </div>

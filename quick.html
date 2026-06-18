@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BODYPALETTE 展示会前クイック版</title>
+  <style>
+    :root {
+      --black: #070707;
+      --smoke: #314145;
+      --slate: #59696b;
+      --gold: #9a8866;
+      --gold-soft: #ddc989;
+      --red: #b65b61;
+      --green: #68766c;
+      --paper: #f7f8f7;
+      --white: #fff;
+      --line: rgba(49, 65, 69, .16);
+      --shadow: 0 20px 60px rgba(30, 40, 42, .08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.98), rgba(247,248,247,.96) 52%, rgba(236,239,237,.95)),
+        radial-gradient(circle at 90% 8%, rgba(221,201,137,.16), transparent 30%);
+      color: var(--black);
+      font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", Arial, sans-serif;
+      line-height: 1.75;
+    }
+
+    .page {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 30px 0 52px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--black);
+      font-size: clamp(18px, 2.4vw, 30px);
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .brand::before {
+      content: "FW";
+      display: grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      background: var(--black);
+      color: var(--gold-soft);
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      color: var(--slate);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 54px);
+      border: 1px solid var(--line);
+      border-left: 8px solid var(--gold);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "QUICK";
+      position: absolute;
+      right: -8px;
+      bottom: -48px;
+      color: rgba(49,65,69,.055);
+      font-family: Georgia, serif;
+      font-size: clamp(90px, 16vw, 210px);
+      font-weight: 800;
+      letter-spacing: .08em;
+      pointer-events: none;
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--black);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(34px, 5vw, 60px);
+      font-weight: 700;
+      line-height: 1.18;
+      text-wrap: balance;
+    }
+
+    .lead {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--smoke);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 14px;
+      border: 1px solid var(--smoke);
+      background: var(--smoke);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: var(--white);
+      color: var(--smoke);
+      border-color: var(--line);
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: clamp(20px, 3vw, 30px);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 14px 36px rgba(30,40,42,.05);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 18px;
+      color: var(--black);
+      font-size: clamp(20px, 2.5vw, 30px);
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .section-title span {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 auto;
+      background: #f4f1e8;
+      border: 1px solid rgba(154,136,102,.28);
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      min-height: 100%;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--gold);
+      background: var(--white);
+    }
+
+    .card.red {
+      border-left-color: var(--red);
+    }
+
+    .card.green {
+      border-left-color: var(--green);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--black);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--smoke);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .script {
+      padding: clamp(20px, 3vw, 30px);
+      background:
+        linear-gradient(135deg, rgba(7,7,7,.98), rgba(49,65,69,.98)),
+        linear-gradient(90deg, transparent, rgba(221,201,137,.18));
+      border: 1px solid rgba(221,201,137,.45);
+      color: var(--white);
+      box-shadow: 0 24px 54px rgba(30,40,42,.18);
+    }
+
+    .script p {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(18px, 2.4vw, 26px);
+      font-weight: 900;
+      line-height: 1.7;
+    }
+
+    .script b {
+      color: var(--gold-soft);
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 13px 14px 13px 42px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--smoke);
+      font-size: 14px;
+      font-weight: 900;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 18px;
+      width: 14px;
+      height: 8px;
+      border-left: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+      transform: rotate(-45deg);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    th {
+      background: var(--smoke);
+      color: var(--white);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    td {
+      color: var(--smoke);
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .priority {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .rank {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .rank strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: var(--black);
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .rank strong::before {
+      content: "";
+      width: 12px;
+      height: 36px;
+      background: var(--gold);
+    }
+
+    .rank p {
+      margin: 0;
+      color: var(--smoke);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .footer-note {
+      margin: 20px 0 0;
+      color: var(--slate);
+      font-size: 12px;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .topbar,
+      .grid,
+      .grid.two,
+      .checklist,
+      .priority {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        display: grid;
+      }
+
+      .meta {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .actions {
+        display: none;
+      }
+
+      .section,
+      .hero {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">FRACTAL WORKOUT</div>
+      <div class="meta">BODYPALETTE Exhibition Quick Guide / 2026.06.18</div>
+    </header>
+
+    <section class="hero">
+      <p class="kicker">5 Minute Pre-Brief</p>
+      <h1>展示会前に見る<br>BODYPALETTE営業クイック版</h1>
+      <p class="lead">長文レポートの要点だけを、当日ブースで話せる量に圧縮。まずは「データを取って終わりではなく、次に何をするかまで支援する」と覚える。</p>
+      <div class="actions">
+        <a class="button" id="fullReportLink" href="./index.html">全文レポートへ</a>
+        <a class="button secondary" href="#talk">30秒トークを見る</a>
+        <button class="button secondary" type="button" onclick="window.print()">印刷 / PDF保存</button>
+      </div>
+    </section>
+
+    <section class="section" id="talk">
+      <h2 class="section-title"><span>01</span>最初の30秒はこれだけ</h2>
+      <div class="script">
+        <p>BODYPALETTEは、健康経営の認定支援だけでなく、社員の健康課題をアンケートで見える化し、<b>課題に合わせたセミナーや運動施策まで実行するサービス</b>です。健診やストレスチェックは取って終わりになりがちですが、当社は<b>次に何をするか</b>まで伴走します。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span>02</span>まず聞く4問</h2>
+      <ul class="checklist">
+        <li>健康経営は、もう取り組まれていますか？</li>
+        <li>認定は取得済みですか、それともこれからですか？</li>
+        <li>今困っているのは、申請工数・施策内容・効果測定のどれですか？</li>
+        <li>現場職、デスクワーク、シフト勤務のどれが多いですか？</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span>03</span>刺さっていた需要トップ7</h2>
+      <div class="grid">
+        <article class="card"><h3>認定・更新の工数削減</h3><p>担当者が少ない、毎年の更新が重い、要件変更が不安。</p></article>
+        <article class="card"><h3>認定後の実改善</h3><p>認定を取っただけで終わらず、社員の健康行動を変えたい。</p></article>
+        <article class="card"><h3>データ後の一手</h3><p>健診・ストレスチェック・アンケート後に何をすべきかわからない。</p></article>
+        <article class="card green"><h3>効果測定・ROI</h3><p>施策をやっても、経営層に成果を説明できない。</p></article>
+        <article class="card green"><h3>現場特有の不調</h3><p>肩こり、腰痛、眼精疲労、立ち仕事、転倒、夜勤、睡眠。</p></article>
+        <article class="card red"><h3>女性・高齢者テーマ</h3><p>更年期、女性の健康、シニア従業員、ロコモ、転倒防止。</p></article>
+        <article class="card red"><h3>健診後・紹介商材</h3><p>特保・生活習慣病フォロー、または顧客企業へ紹介できる商材。</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span>04</span>相手別の一言訴求</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>相手</th><th>最初に刺す言葉</th><th>深掘りテーマ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>人事・総務</td><td>更新工数を減らしつつ、社員に効く施策まで設計できます。</td><td>認定更新、eラーニング、アンケート、セミナー、効果報告</td></tr>
+            <tr><td>経営層・経営企画</td><td>健康経営を、採用・離職・生産性の改善に接続できます。</td><td>ROI、プレゼンティーズム、休職予防、長く働ける環境</td></tr>
+            <tr><td>現場・施設・警備</td><td>足腰・転倒・腰痛など、現場の不調に合わせて施策化できます。</td><td>転倒防止、ロコモ、労災予防、立ち仕事、シニア従業員</td></tr>
+            <tr><td>健診ベンダー</td><td>健診後のネクストアクションを、運動・生活習慣改善で担えます。</td><td>特保、健診後フォロー、3ヶ月改善、共同提案</td></tr>
+            <tr><td>保険会社・銀行</td><td>顧客企業に紹介しやすい、具体施策つきの健康経営サービスです。</td><td>紹介商材、顧客接点、法人提案、地域展開</td></tr>
+            <tr><td>資料収集の来場者</td><td>御社に合うテーマだけ後日15分で整理してお渡しできます。</td><td>担当者紹介、資料送付、無料アンケート、日程化</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span>05</span>代表っぽい話し方の型</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>1. 相手の言葉を拾う</h3>
+          <p>「夜勤が多い」「現場が多い」「更新が大変」などを聞いたら、すぐその言葉を使って返す。</p>
+        </article>
+        <article class="card">
+          <h3>2. それなら、で具体化</h3>
+          <p>「それなら睡眠・食事ですね」「それなら転倒防止ですね」と、最初の提案を一つに絞る。</p>
+        </article>
+        <article class="card green">
+          <h3>3. データ後を売る</h3>
+          <p>「データを取って終わりではなく、次に何をするかまで支援します」を必ず入れる。</p>
+        </article>
+        <article class="card red">
+          <h3>4. 最後は次アクション</h3>
+          <p>QR取得、15分商談、担当者紹介、無料アンケートのどれか一つに着地させる。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span>06</span>クロージングの一言</h2>
+      <div class="priority">
+        <div class="rank"><strong>QR取得</strong><p>「資料と無料アンケートのご案内をお送りしますので、こちらだけ読み取っていただけますか？」</p></div>
+        <div class="rank"><strong>後日商談</strong><p>「御社は〇〇が課題になりそうです。そこに絞って15分で具体案をお持ちしてもよいですか？」</p></div>
+        <div class="rank"><strong>担当者紹介</strong><p>「本来のご担当者様に、御社なら〇〇が合いそうですと短くお送りします。」</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span>07</span>当日の注意点</h2>
+      <ul class="checklist">
+        <li>最初から全部説明しない。30秒で止めて、相手が反応したテーマだけ深掘る。</li>
+        <li>「何でもできます」ではなく「御社ならまず〇〇です」と絞る。</li>
+        <li>制度説明だけで終わらせず、社員の不調や経営課題に接続する。</li>
+        <li>興味が薄い人にも、資料送付・担当者紹介・無料アンケートのどれかを残す。</li>
+      </ul>
+    </section>
+
+    <p class="footer-note">BODYPALETTE Exhibition Quick Guide / FRACTAL WORKOUT Colors</p>
+  </main>
+
+  <script>
+    const fullReportLink = document.getElementById("fullReportLink");
+    if (fullReportLink && location.protocol === "file:") {
+      fullReportLink.setAttribute("href", "./BODYPALETTE展示会_需要営業分析レポート_FRACTAL.html");
+    }
+  </script>
+</body>
+</html>
