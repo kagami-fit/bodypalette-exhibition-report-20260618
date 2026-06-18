@@ -1,0 +1,2427 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>BODYPALETTE 展示会 需要・営業トーク分析レポート</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fw-black: #070707;
+      --fw-white: #ffffff;
+      --fw-bg: #f7f8f7;
+      --fw-paper: #ffffff;
+      --fw-gray-50: #f8f9f8;
+      --fw-gray-100: #ecefed;
+      --fw-gray-200: #dfe5e3;
+      --fw-gray-300: #cbd3d2;
+      --fw-smoke: #59696b;
+      --fw-smoke-dark: #314145;
+      --fw-gold: #9a8866;
+      --fw-gold-2: #ddc989;
+      --fw-red: #b65b61;
+      --fw-green: #68766c;
+      --fw-text: #171a1c;
+      --fw-muted: #687173;
+      --fw-line: rgba(7, 7, 7, .13);
+      --fw-line-strong: rgba(49, 65, 69, .24);
+      --fw-shadow: 0 26px 70px rgba(30, 40, 42, .14);
+      --fw-shadow-soft: 0 18px 44px rgba(30, 40, 42, .08);
+      --radius: 8px;
+      --content: 920px;
+      --sidebar: 312px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--fw-bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--fw-text);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,248,247,.88) 420px, var(--fw-bg) 900px),
+        radial-gradient(circle at 10% 0%, rgba(221,201,137,.16), transparent 310px),
+        radial-gradient(circle at 88% 4%, rgba(89,105,107,.14), transparent 360px);
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.86;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--fw-smoke-dark);
+      text-decoration-color: rgba(154,136,102,.48);
+      text-underline-offset: .18em;
+    }
+
+    a:hover {
+      color: var(--fw-gold);
+      text-decoration-color: currentColor;
+    }
+
+    .page {
+      width: min(1400px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0 72px;
+    }
+
+    .brand-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      min-height: 74px;
+      border-bottom: 1px solid rgba(7,7,7,.08);
+      margin-bottom: 22px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      color: var(--fw-gold-2);
+      background: var(--fw-black);
+      border: 1px solid rgba(154,136,102,.44);
+      font-family: "EB Garamond", serif;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--fw-black);
+      font-family: "EB Garamond", serif;
+      font-size: clamp(18px, 2.5vw, 25px);
+      font-weight: 500;
+      letter-spacing: .18em;
+      line-height: 1.05;
+      white-space: nowrap;
+    }
+
+    .brand-text span {
+      display: block;
+      margin-top: 7px;
+      color: var(--fw-gold);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .22em;
+    }
+
+    .brand-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--fw-muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-meta span + span {
+      padding-left: 14px;
+      border-left: 1px solid var(--fw-line);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      padding: clamp(32px, 6vw, 64px);
+      border: 1px solid var(--fw-line);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.98), rgba(247,248,247,.92) 52%, rgba(236,239,237,.94)),
+        linear-gradient(90deg, transparent, rgba(154,136,102,.08));
+      box-shadow: var(--fw-shadow);
+      margin-bottom: 18px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: var(--fw-gold);
+    }
+
+    .hero::after {
+      content: "FRACTAL";
+      position: absolute;
+      right: -12px;
+      bottom: -38px;
+      color: rgba(49,65,69,.055);
+      font-family: "EB Garamond", serif;
+      font-size: clamp(86px, 15vw, 210px);
+      font-weight: 600;
+      letter-spacing: .07em;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .hero-kicker {
+      margin: 0 0 18px;
+      color: var(--fw-gold);
+      font-family: "EB Garamond", serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      max-width: 1040px;
+      margin: 0;
+      color: var(--fw-black);
+      font-family: "Shippori Mincho", serif;
+      font-size: clamp(32px, 4.2vw, 54px);
+      font-weight: 500;
+      line-height: 1.24;
+      word-break: keep-all;
+      text-wrap: balance;
+    }
+
+    .hero-lead {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 24px 0 0;
+      color: #343b3d;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 32px;
+      max-width: 980px;
+    }
+
+    .hero-card {
+      min-height: 94px;
+      padding: 14px 16px;
+      border: 1px solid var(--fw-line);
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-card span {
+      display: block;
+      color: var(--fw-gold);
+      font-family: "EB Garamond", serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .14em;
+    }
+
+    .hero-card strong {
+      display: block;
+      margin-top: 7px;
+      color: var(--fw-black);
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.55;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin: 18px 0;
+      padding: 12px;
+      border: 1px solid var(--fw-line);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 12px 30px rgba(30,40,42,.06);
+    }
+
+    .toolbar-note {
+      color: var(--fw-muted);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .button {
+      appearance: none;
+      min-height: 38px;
+      border: 1px solid var(--fw-line-strong);
+      border-radius: 0;
+      background: var(--fw-paper);
+      color: var(--fw-smoke-dark);
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .button.primary {
+      border-color: var(--fw-smoke-dark);
+      background: var(--fw-smoke-dark);
+      color: var(--fw-white);
+    }
+
+    .report-layout {
+      display: grid;
+      grid-template-columns: var(--sidebar) minmax(0, var(--content));
+      gap: 22px;
+      align-items: start;
+      justify-content: center;
+    }
+
+    .toc-panel {
+      position: sticky;
+      top: 18px;
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+      border: 1px solid var(--fw-line);
+      background: rgba(255,255,255,.9);
+      box-shadow: var(--fw-shadow-soft);
+    }
+
+    .toc-title {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      margin: 0;
+      padding: 14px 16px;
+      color: var(--fw-white);
+      background: var(--fw-smoke-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .toc-panel > ul {
+      padding: 12px 12px 16px;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .toc-panel ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc-panel li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc-panel a {
+      display: block;
+      border-left: 3px solid transparent;
+      color: var(--fw-muted);
+      padding: 7px 8px 7px 10px;
+      text-decoration: none;
+    }
+
+    .toc-panel > ul > li > a {
+      color: var(--fw-smoke-dark);
+      font-weight: 900;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .toc-panel ul ul a {
+      padding-left: 18px;
+    }
+
+    .toc-panel ul ul ul a {
+      padding-left: 30px;
+      font-size: 11px;
+    }
+
+    .toc-panel a:hover,
+    .toc-panel a.active {
+      border-left-color: var(--fw-gold);
+      background: rgba(154,136,102,.1);
+      color: var(--fw-black);
+    }
+
+    .report-content {
+      min-width: 0;
+      border: 1px solid var(--fw-line);
+      background: var(--fw-paper);
+      box-shadow: var(--fw-shadow-soft);
+      padding: clamp(26px, 4vw, 54px);
+    }
+
+    .report-content > *:first-child {
+      margin-top: 0;
+    }
+
+    .report-content h1,
+    .report-content h2,
+    .report-content h3,
+    .report-content h4 {
+      color: var(--fw-black);
+      font-family: "Shippori Mincho", serif;
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: 0;
+      scroll-margin-top: 28px;
+    }
+
+    .report-content h1 {
+      margin: 0 0 28px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--fw-line);
+      font-size: clamp(27px, 4vw, 42px);
+    }
+
+    .report-content h2 {
+      position: relative;
+      margin: 56px -18px 24px;
+      padding: 18px 18px 18px 26px;
+      border-left: 6px solid var(--fw-gold);
+      background: linear-gradient(90deg, rgba(154,136,102,.12), rgba(247,248,247,.76));
+      font-size: clamp(22px, 3vw, 31px);
+    }
+
+    .report-content h3 {
+      margin: 36px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(154,136,102,.3);
+      color: var(--fw-smoke-dark);
+      font-size: clamp(18px, 2.4vw, 24px);
+    }
+
+    .report-content h4 {
+      margin: 28px 0 10px;
+      color: var(--fw-gold);
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .report-content p {
+      margin: 12px 0;
+      font-size: 15px;
+    }
+
+    .report-content strong {
+      color: var(--fw-black);
+      font-weight: 900;
+    }
+
+    .report-content hr {
+      height: 1px;
+      margin: 42px 0;
+      border: 0;
+      background: linear-gradient(90deg, transparent, rgba(154,136,102,.54), transparent);
+    }
+
+    .report-content blockquote {
+      margin: 22px 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--fw-gold);
+      background: #fbfaf7;
+      color: #303638;
+      box-shadow: inset 0 0 0 1px rgba(154,136,102,.18);
+    }
+
+    .report-content blockquote p {
+      margin: 0;
+      font-family: "Shippori Mincho", serif;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .report-content ul,
+    .report-content ol {
+      margin: 12px 0 18px;
+      padding-left: 1.45em;
+    }
+
+    .report-content li {
+      margin: 5px 0;
+      padding-left: .12em;
+    }
+
+    .report-content li::marker {
+      color: var(--fw-gold);
+      font-weight: 900;
+    }
+
+    .report-content code {
+      border: 1px solid rgba(49,65,69,.16);
+      background: #f3f5f4;
+      color: #263235;
+      padding: .1em .35em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: .9em;
+      overflow-wrap: anywhere;
+    }
+
+    .report-content pre {
+      overflow: auto;
+      border: 1px solid rgba(221,201,137,.28);
+      background: #101617;
+      color: #f7faf8;
+      padding: 18px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .report-content pre code {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+
+    .report-content table {
+      width: 100%;
+      margin: 18px 0 28px;
+      border-collapse: collapse;
+      border: 1px solid var(--fw-line);
+      font-size: 13px;
+      line-height: 1.72;
+      background: var(--fw-paper);
+      box-shadow: 0 8px 20px rgba(30,40,42,.04);
+    }
+
+    .report-content th,
+    .report-content td {
+      vertical-align: top;
+      border: 1px solid var(--fw-line);
+      padding: 11px 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .report-content th {
+      color: var(--fw-white);
+      background: var(--fw-smoke-dark);
+      font-weight: 900;
+      text-align: left;
+    }
+
+    .report-content tbody tr:nth-child(even) td {
+      background: #fbfcfb;
+    }
+
+    .report-content tbody tr:hover td {
+      background: rgba(221,201,137,.13);
+    }
+
+    .report-content figure,
+    .report-content .table-wrapper {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .report-content .sourceCode {
+      margin: 20px 0;
+    }
+
+    .section-div {
+      scroll-margin-top: 28px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(221,201,137,.62);
+      border-radius: 0;
+      background: rgba(49,65,69,.96);
+      color: var(--fw-gold-2);
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(10,18,20,.22);
+    }
+
+    .back-to-top:hover {
+      background: var(--fw-black);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .report-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc-panel {
+        position: relative;
+        top: auto;
+        max-height: none;
+      }
+
+      .toc-panel > ul {
+        columns: 2;
+        column-gap: 22px;
+      }
+
+      .toc-panel li {
+        break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 24px, 1400px);
+        padding-top: 14px;
+      }
+
+      .brand-header,
+      .toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand-meta {
+        flex-wrap: wrap;
+        white-space: normal;
+      }
+
+      .hero {
+        padding: 28px 22px 30px 28px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toc-panel > ul {
+        columns: 1;
+      }
+
+      .report-content {
+        padding: 24px 18px 34px;
+      }
+
+      .report-content h2 {
+        margin-right: -8px;
+        margin-left: -8px;
+        padding-left: 18px;
+      }
+
+      .report-content table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
+
+      .back-to-top {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .brand-header,
+      .hero,
+      .toolbar,
+      .toc-panel,
+      .back-to-top {
+        display: none !important;
+      }
+
+      .report-layout {
+        display: block;
+      }
+
+      .report-content {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .report-content h2 {
+        break-after: avoid;
+      }
+
+      .report-content table {
+        break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+  </head>
+<body>
+  <div class="page" id="top">
+    <header class="brand-header" aria-label="FRACTAL WORKOUT report header">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">FW</div>
+        <div class="brand-text">
+          <strong>FRACTAL WORKOUT</strong>
+          <span>BODYPALETTE EXHIBITION ANALYSIS</span>
+        </div>
+      </div>
+      <div class="brand-meta">
+        <span>Full Report</span>
+        <span>No Omission</span>
+        <span>2026.06.18</span>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="report summary">
+      <p class="hero-kicker">Demand / Sales Talk / Exhibition Playbook</p>
+      <h1>BODYPALETTE 展示会 需要・営業トーク分析レポート</h1>
+      <p class="hero-lead">
+        展示会文字起こしから、健康経営に対する需要、代表の営業トーク、次回展示会で誰でも話せる型を、FRACTAL WORKOUTのトーンで読みやすく整理した全文HTML版です。
+      </p>
+      <div class="hero-grid">
+        <div class="hero-card"><span>01</span><strong>需要を網羅整理</strong></div>
+        <div class="hero-card"><span>02</span><strong>相手別の刺さる訴求</strong></div>
+        <div class="hero-card"><span>03</span><strong>代表トークを構造化</strong></div>
+        <div class="hero-card"><span>04</span><strong>展示会後の実行手順</strong></div>
+      </div>
+    </section>
+
+    <div class="toolbar" aria-label="document controls">
+      <div class="toolbar-note">本文・表・見出しはMarkdownレポートの全文を変換しています。印刷やPDF保存にも対応します。</div>
+      <div class="toolbar-actions">
+        <button class="button" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">先頭へ</button>
+        <button class="button primary" type="button" onclick="window.print()">印刷 / PDF保存</button>
+      </div>
+    </div>
+
+    <div class="report-layout">
+            <aside class="toc-panel" aria-label="Table of contents">
+        <p class="toc-title">CONTENTS</p>
+        <ul>
+        <li><a href="#bodypalette-展示会録音-需要営業トーク分析レポート"
+        id="toc-bodypalette-展示会録音-需要営業トーク分析レポート">BODYPALETTE
+        展示会録音 需要・営業トーク分析レポート</a>
+        <ul>
+        <li><a href="#1-全体結論" id="toc-1-全体結論">1.
+        全体結論</a></li>
+        <li><a href="#2-需要の全洗い出し" id="toc-2-需要の全洗い出し">2.
+        需要の全洗い出し</a>
+        <ul>
+        <li><a href="#21-認定申請更新まわりの需要"
+        id="toc-21-認定申請更新まわりの需要">2.1
+        認定・申請・更新まわりの需要</a></li>
+        <li><a href="#22-データ活用見える化まわりの需要"
+        id="toc-22-データ活用見える化まわりの需要">2.2
+        データ活用・見える化まわりの需要</a></li>
+        <li><a href="#23-具体施策セミナー需要"
+        id="toc-23-具体施策セミナー需要">2.3
+        具体施策・セミナー需要</a></li>
+        <li><a href="#24-フィジカル不調現場課題の需要"
+        id="toc-24-フィジカル不調現場課題の需要">2.4
+        フィジカル不調・現場課題の需要</a></li>
+        <li><a href="#25-女性高齢者更年期プレコン系の需要"
+        id="toc-25-女性高齢者更年期プレコン系の需要">2.5
+        女性・高齢者・更年期・プレコン系の需要</a></li>
+        <li><a href="#26-特定保健指導健診後フォロー医療連携の需要"
+        id="toc-26-特定保健指導健診後フォロー医療連携の需要">2.6
+        特定保健指導・健診後フォロー・医療連携の需要</a></li>
+        <li><a href="#27-地方中小企業紹介者経由の需要"
+        id="toc-27-地方中小企業紹介者経由の需要">2.7
+        地方・中小企業・紹介者経由の需要</a></li>
+        </ul></li>
+        <li><a href="#3-来場者タイプ別の刺さる訴求"
+        id="toc-3-来場者タイプ別の刺さる訴求">3.
+        来場者タイプ別の刺さる訴求</a>
+        <ul>
+        <li><a href="#タイプa-健康経営をすでに取得している人事総務"
+        id="toc-タイプa-健康経営をすでに取得している人事総務">タイプA:
+        健康経営をすでに取得している人事・総務</a></li>
+        <li><a href="#タイプb-これから健康経営に取り組む企業"
+        id="toc-タイプb-これから健康経営に取り組む企業">タイプB:
+        これから健康経営に取り組む企業</a></li>
+        <li><a href="#タイプc-認定のための健康経営に違和感がある本質派"
+        id="toc-タイプc-認定のための健康経営に違和感がある本質派">タイプC:
+        「認定のための健康経営」に違和感がある本質派</a></li>
+        <li><a href="#タイプd-現場工場警備施設管理立ち仕事系"
+        id="toc-タイプd-現場工場警備施設管理立ち仕事系">タイプD:
+        現場・工場・警備・施設管理・立ち仕事系</a></li>
+        <li><a href="#タイプe-経営企画経営層人材定着文脈"
+        id="toc-タイプe-経営企画経営層人材定着文脈">タイプE:
+        経営企画・経営層・人材定着文脈</a></li>
+        <li><a
+        href="#タイプf-健診ストレスチェック健康管理システム事業者"
+        id="toc-タイプf-健診ストレスチェック健康管理システム事業者">タイプF:
+        健診・ストレスチェック・健康管理システム事業者</a></li>
+        <li><a href="#タイプg-保険会社金融機関地域支援者"
+        id="toc-タイプg-保険会社金融機関地域支援者">タイプG:
+        保険会社・金融機関・地域支援者</a></li>
+        </ul></li>
+        <li><a href="#4-代表の営業トーク詳細分析"
+        id="toc-4-代表の営業トーク詳細分析">4.
+        代表の営業トーク詳細分析</a>
+        <ul>
+        <li><a href="#41-代表トークの基本構造"
+        id="toc-41-代表トークの基本構造">4.1
+        代表トークの基本構造</a></li>
+        <li><a href="#42-代表トークの強み"
+        id="toc-42-代表トークの強み">4.2 代表トークの強み</a></li>
+        <li><a href="#43-代表トークの改善点"
+        id="toc-43-代表トークの改善点">4.3 代表トークの改善点</a></li>
+        </ul></li>
+        <li><a href="#5-次回展示会用トーク設計"
+        id="toc-5-次回展示会用トーク設計">5. 次回展示会用トーク設計</a>
+        <ul>
+        <li><a href="#51-最初の声かけテンプレート"
+        id="toc-51-最初の声かけテンプレート">5.1
+        最初の声かけテンプレート</a></li>
+        <li><a href="#52-30秒トーク" id="toc-52-30秒トーク">5.2
+        30秒トーク</a></li>
+        <li><a href="#53-2分トーク" id="toc-53-2分トーク">5.3
+        2分トーク</a></li>
+        <li><a href="#54-深掘り質問リスト"
+        id="toc-54-深掘り質問リスト">5.4 深掘り質問リスト</a></li>
+        <li><a href="#55-クロージングの型"
+        id="toc-55-クロージングの型">5.5 クロージングの型</a></li>
+        </ul></li>
+        <li><a href="#6-需要別-提案メニュー化"
+        id="toc-6-需要別-提案メニュー化">6. 需要別 提案メニュー化</a>
+        <ul>
+        <li><a href="#61-展示会後すぐ売れる可能性が高いメニュー"
+        id="toc-61-展示会後すぐ売れる可能性が高いメニュー">6.1
+        展示会後すぐ売れる可能性が高いメニュー</a></li>
+        </ul></li>
+        <li><a href="#7-展示会運用の分析" id="toc-7-展示会運用の分析">7.
+        展示会運用の分析</a>
+        <ul>
+        <li><a href="#71-ブースで反応が取れていた要素"
+        id="toc-71-ブースで反応が取れていた要素">7.1
+        ブースで反応が取れていた要素</a></li>
+        <li><a href="#72-声かけで試されていた軸"
+        id="toc-72-声かけで試されていた軸">7.2
+        声かけで試されていた軸</a></li>
+        <li><a href="#73-来場者の見分け方"
+        id="toc-73-来場者の見分け方">7.3 来場者の見分け方</a></li>
+        <li><a href="#74-展示会後フォローの優先順位"
+        id="toc-74-展示会後フォローの優先順位">7.4
+        展示会後フォローの優先順位</a></li>
+        </ul></li>
+        <li><a href="#8-今後の展示会で誰でも話せるようにするための型"
+        id="toc-8-今後の展示会で誰でも話せるようにするための型">8.
+        今後の展示会で誰でも話せるようにするための型</a>
+        <ul>
+        <li><a href="#81-まず覚えるべき一文"
+        id="toc-81-まず覚えるべき一文">8.1 まず覚えるべき一文</a></li>
+        <li><a href="#82-次に覚えるべき3つの強み"
+        id="toc-82-次に覚えるべき3つの強み">8.2
+        次に覚えるべき3つの強み</a></li>
+        <li><a href="#83-相手別の一言変換"
+        id="toc-83-相手別の一言変換">8.3 相手別の一言変換</a></li>
+        <li><a href="#84-誰でも使える会話フロー"
+        id="toc-84-誰でも使える会話フロー">8.4
+        誰でも使える会話フロー</a></li>
+        <li><a href="#85-代表っぽさを再現するための話し方"
+        id="toc-85-代表っぽさを再現するための話し方">8.5
+        代表っぽさを再現するための話し方</a></li>
+        </ul></li>
+        <li><a href="#9-追加で見るべき分析観点"
+        id="toc-9-追加で見るべき分析観点">9. 追加で見るべき分析観点</a>
+        <ul>
+        <li><a href="#91-リードスコア分析"
+        id="toc-91-リードスコア分析">9.1 リードスコア分析</a></li>
+        <li><a href="#92-商品パッケージ分析"
+        id="toc-92-商品パッケージ分析">9.2 商品パッケージ分析</a></li>
+        <li><a href="#93-資料不足分析" id="toc-93-資料不足分析">9.3
+        資料不足分析</a></li>
+        <li><a href="#94-競合代替手段分析"
+        id="toc-94-競合代替手段分析">9.4 競合・代替手段分析</a></li>
+        <li><a href="#95-リスク分析" id="toc-95-リスク分析">9.5
+        リスク分析</a></li>
+        </ul></li>
+        <li><a href="#10-展示会後の具体アクション"
+        id="toc-10-展示会後の具体アクション">10.
+        展示会後の具体アクション</a>
+        <ul>
+        <li><a href="#最優先" id="toc-最優先">最優先</a></li>
+        <li><a href="#次回展示会まで"
+        id="toc-次回展示会まで">次回展示会まで</a></li>
+        </ul></li>
+        <li><a href="#11-まとめ" id="toc-11-まとめ">11. まとめ</a></li>
+        </ul></li>
+        </ul>
+      </aside>
+            <main class="report-content" id="report-content">
+        <section id="bodypalette-展示会録音-需要営業トーク分析レポート"
+        class="level1">
+        <h1>BODYPALETTE 展示会録音 需要・営業トーク分析レポート</h1>
+        <p>作成日: 2026-06-18<br />
+        対象:</p>
+        <ul>
+        <li><code>/Users/hayatokagami/Downloads/BP展示会/06-18 顧客相談：企業の健康経営推進、個別介入、地域展開-transcript.txt</code></li>
+        <li><code>/Users/hayatokagami/Downloads/BP展示会/06-18 健康経営ソリューション展示会におけるブース運営と顧客エンゲージメントの全記録-transcript.txt</code></li>
+        </ul>
+        <p>注意:</p>
+        <ul>
+        <li>文字起こしには誤変換が多く含まれるため、文脈から意味を補正して分析しています。</li>
+        <li>健康経営優良法人の要件・制度日程・助成金・医療制度に関する説明は、録音内での発話をもとに整理しています。実運用前には必ず最新の公式要件で確認してください。</li>
+        </ul>
+        <hr />
+        <section id="1-全体結論" class="level2">
+        <h2>1. 全体結論</h2>
+        <p>今回の展示会で実際に出ていた需要は、単に「健康経営をやりたい」ではありません。来場者の本音は、次の7つに集約されます。</p>
+        <ol type="1">
+        <li>健康経営優良法人の申請・更新の工数を減らしたい</li>
+        <li>認定を取っただけで終わらせず、社員の健康課題を本当に改善したい</li>
+        <li>健診・ストレスチェック・アンケートのデータを取っているが、次に何をすべきかわからない</li>
+        <li>施策をやっても、効果やROIを説明できない</li>
+        <li>高齢者、女性、更年期、転倒防止、夜勤、現場仕事、立ち仕事など、自社特有の課題に合う施策が欲しい</li>
+        <li>特定保健指導該当者、生活習慣病、健診後フォローなど、より医療寄りの改善プログラムが欲しい</li>
+        <li>保険会社、健診ベンダー、アプリ事業者、医療機関、地域支援者が、自社顧客に紹介できる具体的な健康経営ソリューションを探している</li>
+        </ol>
+        <p>BODYPALETTEが強く刺さっているのは、「認定サポート」そのものではなく、次の組み合わせです。</p>
+        <blockquote>
+        <p>健康課題を見える化し、優先順位をつけ、医療連携・運動指導の専門性をもとに、具体施策まで実行し、結果を振り返れること。</p>
+        </blockquote>
+        <p>代表の営業トークは、この価値を相手に合わせて言い換える力が非常に強いです。一方で、展示会で誰でも再現するには、情報量が多すぎるため、話法を「相手タイプ別」に整理する必要があります。</p>
+        <hr />
+        </section>
+        <section id="2-需要の全洗い出し" class="level2">
+        <h2>2. 需要の全洗い出し</h2>
+        <section id="21-認定申請更新まわりの需要" class="level3">
+        <h3>2.1 認定・申請・更新まわりの需要</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>需要</th>
+        <th>来場者の状態</th>
+        <th>BODYPALETTEの刺さる訴求</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>健康経営優良法人の申請を初めてやりたい</td>
+        <td>何から始めればよいかわからない</td>
+        <td>申請要件に合わせたeラーニング、アンケート、施策まで一気通貫で支援</td>
+        </tr>
+        <tr>
+        <td>毎年の更新作業が大変</td>
+        <td>既に認定取得済みだが、担当者の工数が重い</td>
+        <td>更新工数を大幅削減、必要項目の多くをツールとコンテンツでカバー</td>
+        </tr>
+        <tr>
+        <td>担当者が変わってノウハウが残らない</td>
+        <td>総務・人事担当者が新任</td>
+        <td>ユーザー管理、eラーニング履歴、アンケート履歴で属人化を減らす</td>
+        </tr>
+        <tr>
+        <td>申請要件が毎年変わることへの不安</td>
+        <td>7月の新要件発表後に慌てる</td>
+        <td>要件変更に合わせてコンテンツ更新、申請期間中の駆け込み支援</td>
+        </tr>
+        <tr>
+        <td>ホワイト500や大規模法人の上位認定を狙いたい</td>
+        <td>既に基本認定は取得済み</td>
+        <td>アウトカム指標、数値管理、施策前後比較を支援</td>
+        </tr>
+        <tr>
+        <td>健康経営の担当者が少ない</td>
+        <td>2-3名体制、他業務兼務</td>
+        <td>ツール、セミナー、コンサル的伴走で実務を外部化</td>
+        </tr>
+        <tr>
+        <td>社内稟議・経営層説明が難しい</td>
+        <td>「なぜ健康経営に予算を使うのか」を説明できない</td>
+        <td>採用、離職、生産性、医療費、プレゼンティーズムに接続して説明</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>録音内では、既取得企業だけでなく、「これから取る」「上がOKしない」「担当に資料を持ってこいと言われた」というライトな接点も複数ありました。初回接点では、認定要件の細かい説明よりも「今のステージ確認」と「次に必要な一手」を短く出す方が効果的です。</p>
+        </section>
+        <section id="22-データ活用見える化まわりの需要" class="level3">
+        <h3>2.2 データ活用・見える化まわりの需要</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>需要</th>
+        <th>来場者の状態</th>
+        <th>BODYPALETTEの刺さる訴求</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>健診データはあるが、活用できていない</td>
+        <td>健診代行・健診管理ツールは導入または検討中</td>
+        <td>健診後のネクストアクションをBODYPALETTEが担う</td>
+        </tr>
+        <tr>
+        <td>ストレスチェックをやって終わり</td>
+        <td>高ストレス者に「産業医に行ってね」で終わっている</td>
+        <td>月次アンケートで変化を追い、必要なら産業医・外部専門家につなぐ</td>
+        </tr>
+        <tr>
+        <td>健康課題が何かわからない</td>
+        <td>福利厚生はあるが使われていない</td>
+        <td>18項目アンケートでワースト課題を可視化</td>
+        </tr>
+        <tr>
+        <td>部署別・年代別・性別で課題を見たい</td>
+        <td>現場、営業、事務、シフト勤務などが混在</td>
+        <td>部署・属性別に集計して施策を変える</td>
+        </tr>
+        <tr>
+        <td>施策が効いたか測りたい</td>
+        <td>セミナーや福利厚生を実施しても成果が不明</td>
+        <td>前後比較、月次推移、プレゼンティーズム指標で見る</td>
+        </tr>
+        <tr>
+        <td>食事、運動、睡眠、メンタルを横断して見たい</td>
+        <td>単一テーマのサービスでは不足</td>
+        <td>総合アンケートと専門家ネットワークで課題別に対応</td>
+        </tr>
+        <tr>
+        <td>ROIを出したい</td>
+        <td>経営層に説明できない</td>
+        <td>課題に対して費用を使い、改善幅を報告する設計</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>重要なのは、来場者の多くが「データを取りたい」ではなく「データを見た後に何をすればよいか知りたい」と話している点です。ここはBODYPALETTEの差別化の中心です。</p>
+        </section>
+        <section id="23-具体施策セミナー需要" class="level3">
+        <h3>2.3 具体施策・セミナー需要</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>需要</th>
+        <th>具体例</th>
+        <th>提案すべきメニュー</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>単発セミナーを試したい</td>
+        <td>「まず1回」「申請に間に合わせたい」</td>
+        <td>オンライン単発、オンサイト単発、展示会限定トライアル</td>
+        </tr>
+        <tr>
+        <td>オーダーメイドセミナーが欲しい</td>
+        <td>課題に合わせて内容を変えたい</td>
+        <td>アンケート結果に基づくカスタムセミナー</td>
+        </tr>
+        <tr>
+        <td>ヨガ・ピラティスをやりたい</td>
+        <td>女性社員、若手、福利厚生文脈</td>
+        <td>週末配信、オンサイト体験、希望者参加型</td>
+        </tr>
+        <tr>
+        <td>椅子に座ってできる運動が欲しい</td>
+        <td>オフィス、デスクワーカー、短時間</td>
+        <td>肩こり・首こり・眼精疲労・腰痛対策</td>
+        </tr>
+        <tr>
+        <td>工場・現場向けに転倒防止をしたい</td>
+        <td>高齢従業員、現場作業、警備、施設管理</td>
+        <td>転倒予防、足腰ケア、ロコモ・フレイル対策</td>
+        </tr>
+        <tr>
+        <td>立ち仕事の足の痛みを減らしたい</td>
+        <td>足底筋膜炎、膝、足関節、股関節</td>
+        <td>朝・昼・退勤前の5分ルーティン、3ヶ月改善プログラム</td>
+        </tr>
+        <tr>
+        <td>夜勤・シフト勤務の生活習慣を整えたい</td>
+        <td>睡眠、食事タイミング、離職</td>
+        <td>睡眠・食事・疲労回復セミナー、シフト勤務者向けプログラム</td>
+        </tr>
+        <tr>
+        <td>メンタルケアの入口を作りたい</td>
+        <td>相談しづらい、産業医が機能していない</td>
+        <td>外部専門家セミナー、相談窓口の再周知、月次モニタリング</td>
+        </tr>
+        <tr>
+        <td>コミュニケーション施策も兼ねたい</td>
+        <td>運動後に懇親・交流</td>
+        <td>運動イベント + コミュニケーション促進</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>録音内では「単発でやりたい」「何ができるのか知りたい」「セミナー一覧と料金が欲しい」という反応が複数出ています。次回展示会までに、セミナー一覧・料金・対象課題・所要時間を1枚にまとめるべきです。</p>
+        </section>
+        <section id="24-フィジカル不調現場課題の需要" class="level3">
+        <h3>2.4 フィジカル不調・現場課題の需要</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>需要</th>
+        <th>背景</th>
+        <th>提案の切り口</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>肩こり・首こり・腰痛</td>
+        <td>デスクワーク、PC作業</td>
+        <td>プレゼンティーズム改善、短時間ストレッチ</td>
+        </tr>
+        <tr>
+        <td>眼精疲労</td>
+        <td>PC作業、展示会アンケートでも上位</td>
+        <td>目周りケア、首肩ケア、睡眠改善とセット</td>
+        </tr>
+        <tr>
+        <td>慢性疲労</td>
+        <td>睡眠、運動不足、ストレス</td>
+        <td>朝夕配信、疲労回復ストレッチ</td>
+        </tr>
+        <tr>
+        <td>運動習慣不足</td>
+        <td>多くの企業で共通</td>
+        <td>日常に組み込める短時間運動、オンライン配信</td>
+        </tr>
+        <tr>
+        <td>立ち仕事の足腰負担</td>
+        <td>警備、施設管理、販売、現場</td>
+        <td>足底筋膜炎、膝痛、転倒防止、労災予防</td>
+        </tr>
+        <tr>
+        <td>シニア従業員の体力維持</td>
+        <td>60歳以上の雇用増</td>
+        <td>健康寿命、転倒予防、ロコモ対策</td>
+        </tr>
+        <tr>
+        <td>若手の体力・メンタル低下</td>
+        <td>離職、育成、ストレス</td>
+        <td>軽運動によるストレス軽減、習慣化</td>
+        </tr>
+        <tr>
+        <td>生活習慣病リスク</td>
+        <td>糖尿病、脂質異常、肥満</td>
+        <td>3ヶ月改善プログラム、特定保健指導該当者対策</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>代表は「メンタル不調も重要だが、フィジカル不調の損失が大きい」という話を使っています。これは非常に強い武器です。展示会では、次のように短くするのがよいです。</p>
+        <blockquote>
+        <p>健康経営はメンタル施策に寄りがちですが、実際には肩こり・腰痛・眼精疲労・慢性疲労のようなフィジカル不調が生産性を大きく落としています。BODYPALETTEはそこをデータで見つけて、運動施策で改善します。</p>
+        </blockquote>
+        </section>
+        <section id="25-女性高齢者更年期プレコン系の需要"
+        class="level3">
+        <h3>2.5 女性・高齢者・更年期・プレコン系の需要</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>需要</th>
+        <th>背景</th>
+        <th>提案</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>女性の健康課題に対応したい</td>
+        <td>健康経営要件、働きやすさ、復職支援</td>
+        <td>女性特有の不調、更年期、痩せ、婦人科系テーマ</td>
+        </tr>
+        <tr>
+        <td>男性更年期も扱いたい</td>
+        <td>ミドルシニア層の不調</td>
+        <td>男性更年期、疲労、睡眠、運動習慣</td>
+        </tr>
+        <tr>
+        <td>高齢者の転倒防止</td>
+        <td>60歳以上の雇用増、現場事故予防</td>
+        <td>有資格者による転倒予防・ロコモ対策</td>
+        </tr>
+        <tr>
+        <td>プレコンセプションケアの流れに対応したい</td>
+        <td>今後の要件追加への不安</td>
+        <td>女性の働き方、復職、ライフイベント支援</td>
+        </tr>
+        <tr>
+        <td>健康経営要件の加点につなげたい</td>
+        <td>認定更新・上位認定狙い</td>
+        <td>施策ストーリー、実施証跡、数値報告</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>この領域は「制度対応」と「社員への実利」が両方あります。単に「女性・高齢者テーマできます」ではなく、「今年・来年の健康経営要件に備えつつ、社員の実課題も解決できます」と話すと強いです。</p>
+        </section>
+        <section id="26-特定保健指導健診後フォロー医療連携の需要"
+        class="level3">
+        <h3>2.6 特定保健指導・健診後フォロー・医療連携の需要</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>需要</th>
+        <th>背景</th>
+        <th>提案</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>特定保健指導該当者を減らしたい</td>
+        <td>健保・企業のアウトカム課題</td>
+        <td>3ヶ月改善プログラム、数値改善レポート</td>
+        </tr>
+        <tr>
+        <td>健診後に何をすればいいかわからない</td>
+        <td>健診ツールだけではアクションがない</td>
+        <td>運動・食事・生活習慣のネクストアクション</td>
+        </tr>
+        <tr>
+        <td>健診センターのアフターフォロー商材が欲しい</td>
+        <td>健診後のLTV向上</td>
+        <td>医療費控除対象の運動療法、クロスセル</td>
+        </tr>
+        <tr>
+        <td>医療機関と連携したい</td>
+        <td>運動療法処方箋、生活習慣病</td>
+        <td>ドクターの処方を運動指導に翻訳できる専門性</td>
+        </tr>
+        <tr>
+        <td>健保組合に提案したい</td>
+        <td>後期高齢者支援金・医療費圧縮</td>
+        <td>特保該当者減、二次検査受診、健康数値改善</td>
+        </tr>
+        <tr>
+        <td>アプリ・デバイスと連携したい</td>
+        <td>食事、睡眠、歩数、体重などのデータはある</td>
+        <td>運動領域の実行支援、API連携、共同サービス</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>ここはBtoBだけでなく、BtoBtoB、BtoBtoC、医療機関連携、健診センター連携まで広がる領域です。展示会では、一般来場者向けトークとパートナー向けトークを分けるべきです。</p>
+        </section>
+        <section id="27-地方中小企業紹介者経由の需要" class="level3">
+        <h3>2.7 地方・中小企業・紹介者経由の需要</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>需要</th>
+        <th>背景</th>
+        <th>提案</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>地方企業が何をすればよいかわからない</td>
+        <td>商工会議所、中小企業庁、地域金融機関経由で相談が増加</td>
+        <td>オンライン完結、全国対応、必要に応じて現地派遣</td>
+        </tr>
+        <tr>
+        <td>中小企業診断士や保険会社が紹介先を探している</td>
+        <td>申請支援はできるが施策実行までは弱い</td>
+        <td>紹介パートナー制度、紹介先特典、代理店手数料または値引き設計</td>
+        </tr>
+        <tr>
+        <td>地域の企業に人材定着の施策を提案したい</td>
+        <td>採用難・離職防止</td>
+        <td>健康経営を採用・定着・福利厚生に接続</td>
+        </tr>
+        <tr>
+        <td>地方では情報が少ない</td>
+        <td>都市部ほどベンダーがいない</td>
+        <td>全国オンライン + 地域別オンサイト</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>録音では、名古屋・東海・北陸・富山・大阪など、地域文脈が複数出ています。「健康経営はやった方がいいと言われるが、実務がわからない」という声が非常に強いです。</p>
+        <hr />
+        </section>
+        </section>
+        <section id="3-来場者タイプ別の刺さる訴求" class="level2">
+        <h2>3. 来場者タイプ別の刺さる訴求</h2>
+        <section id="タイプa-健康経営をすでに取得している人事総務"
+        class="level3">
+        <h3>タイプA: 健康経営をすでに取得している人事・総務</h3>
+        <p>主な悩み:</p>
+        <ul>
+        <li>毎年の更新が大変</li>
+        <li>施策がマンネリ化している</li>
+        <li>何をやればよいかわからない</li>
+        <li>効果測定ができない</li>
+        <li>経営層に成果を説明できない</li>
+        </ul>
+        <p>刺さる一言:</p>
+        <blockquote>
+        <p>認定更新の工数を下げながら、社員の健康課題をデータで見える化して、施策の効果まで追えるサービスです。</p>
+        </blockquote>
+        <p>聞くべき質問:</p>
+        <ul>
+        <li>今年も更新予定ですか？</li>
+        <li>更新作業は何名体制でされていますか？</li>
+        <li>認定取得後、施策が効いているかは見えていますか？</li>
+        <li>毎年「今年は何をやるか」で悩んでいませんか？</li>
+        </ul>
+        <p>提案:</p>
+        <ul>
+        <li>月次アンケート</li>
+        <li>eラーニング</li>
+        <li>課題別セミナー</li>
+        <li>申請要件に紐づく施策証跡</li>
+        <li>ROI・前後比較レポート</li>
+        </ul>
+        </section>
+        <section id="タイプb-これから健康経営に取り組む企業"
+        class="level3">
+        <h3>タイプB: これから健康経営に取り組む企業</h3>
+        <p>主な悩み:</p>
+        <ul>
+        <li>何から始めるべきかわからない</li>
+        <li>健診データが紙やExcelで管理されている</li>
+        <li>役員承認が降りていない</li>
+        <li>健康経営の必要性を説明できない</li>
+        </ul>
+        <p>刺さる一言:</p>
+        <blockquote>
+        <p>初めての申請に必要な土台づくりから、社員に効く施策づくりまでまとめて支援できます。</p>
+        </blockquote>
+        <p>聞くべき質問:</p>
+        <ul>
+        <li>今は申請前ですか、それとも情報収集中ですか？</li>
+        <li>従業員数は何名くらいですか？</li>
+        <li>健診データやストレスチェックはどう管理されていますか？</li>
+        <li>役員のOKが出ない理由は、費用ですか、効果が見えないことですか？</li>
+        </ul>
+        <p>提案:</p>
+        <ul>
+        <li>無料アンケート</li>
+        <li>健康課題の棚卸し</li>
+        <li>初回セミナー</li>
+        <li>申請要件の不足チェック</li>
+        <li>役員説明用の健康経営ストーリー</li>
+        </ul>
+        </section>
+        <section id="タイプc-認定のための健康経営に違和感がある本質派"
+        class="level3">
+        <h3>タイプC: 「認定のための健康経営」に違和感がある本質派</h3>
+        <p>主な悩み:</p>
+        <ul>
+        <li>認定取得が目的化している</li>
+        <li>社員の健康改善につながっていない</li>
+        <li>福利厚生が使われていない</li>
+        <li>本当に社員に喜ばれる施策を探している</li>
+        </ul>
+        <p>刺さる一言:</p>
+        <blockquote>
+        <p>認定をゴールにせず、社員の実際の不調を見つけて、改善まで伴走する健康経営です。</p>
+        </blockquote>
+        <p>聞くべき質問:</p>
+        <ul>
+        <li>認定は重視していますか、それとも社員改善を優先していますか？</li>
+        <li>今ある福利厚生は使われていますか？</li>
+        <li>社員が何に困っているか、データで見えていますか？</li>
+        </ul>
+        <p>提案:</p>
+        <ul>
+        <li>18項目アンケート</li>
+        <li>課題ワースト5の可視化</li>
+        <li>課題に応じたセミナー</li>
+        <li>使われない福利厚生の見直し</li>
+        </ul>
+        </section>
+        <section id="タイプd-現場工場警備施設管理立ち仕事系"
+        class="level3">
+        <h3>タイプD: 現場・工場・警備・施設管理・立ち仕事系</h3>
+        <p>主な悩み:</p>
+        <ul>
+        <li>足腰の痛み</li>
+        <li>転倒リスク</li>
+        <li>高齢従業員の増加</li>
+        <li>労災リスク</li>
+        <li>メールアドレスがない現場従業員への施策展開</li>
+        <li>夜勤・シフト勤務による睡眠や食事の乱れ</li>
+        </ul>
+        <p>刺さる一言:</p>
+        <blockquote>
+        <p>現場の足腰・転倒・疲労のようなリアルな不調に合わせて、現場で使える運動施策まで作れます。</p>
+        </blockquote>
+        <p>聞くべき質問:</p>
+        <ul>
+        <li>現場の方は立ち仕事が多いですか？</li>
+        <li>転倒や足腰の痛みは課題になっていますか？</li>
+        <li>夜勤やシフト勤務はありますか？</li>
+        <li>メールアドレスがない従業員の方はいらっしゃいますか？</li>
+        </ul>
+        <p>提案:</p>
+        <ul>
+        <li>転倒防止セミナー</li>
+        <li>足底筋膜炎・膝痛・腰痛対策</li>
+        <li>朝・昼・退勤前の5分ルーティン</li>
+        <li>オンサイト実施</li>
+        <li>オンデマンド動画納品</li>
+        <li>シフト勤務者向け睡眠・食事セミナー</li>
+        </ul>
+        </section>
+        <section id="タイプe-経営企画経営層人材定着文脈" class="level3">
+        <h3>タイプE: 経営企画・経営層・人材定着文脈</h3>
+        <p>主な悩み:</p>
+        <ul>
+        <li>事業拡大に人が必要</li>
+        <li>採用・離職が課題</li>
+        <li>健康経営に予算をつける理由が必要</li>
+        <li>健康施策のROIを説明したい</li>
+        </ul>
+        <p>刺さる一言:</p>
+        <blockquote>
+        <p>健康経営を、採用・離職・生産性の経営課題に接続して設計できます。</p>
+        </blockquote>
+        <p>聞くべき質問:</p>
+        <ul>
+        <li>今、事業拡大や採用強化のフェーズですか？</li>
+        <li>離職理由に体力・睡眠・メンタルはありますか？</li>
+        <li>経営層に健康経営の効果をどう説明していますか？</li>
+        </ul>
+        <p>提案:</p>
+        <ul>
+        <li>離職理由と健康課題の接続</li>
+        <li>プレゼンティーズム可視化</li>
+        <li>施策前後比較</li>
+        <li>経営層向け説明資料</li>
+        <li>採用ブランディング文脈</li>
+        </ul>
+        </section>
+        <section id="タイプf-健診ストレスチェック健康管理システム事業者"
+        class="level3">
+        <h3>タイプF: 健診・ストレスチェック・健康管理システム事業者</h3>
+        <p>主な悩み:</p>
+        <ul>
+        <li>データ取得後の施策が弱い</li>
+        <li>顧客に「次の一手」を出せない</li>
+        <li>運動領域の専門性がない</li>
+        <li>API連携・共同提案をしたい</li>
+        </ul>
+        <p>刺さる一言:</p>
+        <blockquote>
+        <p>御社が取った健診・ストレスチェックデータの先にある、具体的な改善施策をBODYPALETTEが担えます。</p>
+        </blockquote>
+        <p>聞くべき質問:</p>
+        <ul>
+        <li>データを取った後の施策提案はどうされていますか？</li>
+        <li>特定保健指導該当者への具体プログラムはありますか？</li>
+        <li>運動領域は自社で持っていますか？</li>
+        <li>共同提案やAPI連携は検討できますか？</li>
+        </ul>
+        <p>提案:</p>
+        <ul>
+        <li>パートナー契約</li>
+        <li>API連携構想</li>
+        <li>健診後フォロープログラム</li>
+        <li>特保改善プログラム</li>
+        <li>共同PR</li>
+        </ul>
+        </section>
+        <section id="タイプg-保険会社金融機関地域支援者" class="level3">
+        <h3>タイプG: 保険会社・金融機関・地域支援者</h3>
+        <p>主な悩み:</p>
+        <ul>
+        <li>顧客企業から健康経営の相談を受ける</li>
+        <li>申請支援まではできるが、施策実行が弱い</li>
+        <li>地方・中小企業が何をしていいかわからない</li>
+        <li>顧客に紹介できる商材が欲しい</li>
+        </ul>
+        <p>刺さる一言:</p>
+        <blockquote>
+        <p>御社のお客様に、健康経営の申請だけでなく、その後の施策実行まで紹介できるパートナーになれます。</p>
+        </blockquote>
+        <p>聞くべき質問:</p>
+        <ul>
+        <li>顧客企業から健康経営の相談は増えていますか？</li>
+        <li>申請後の施策実行まで支援されていますか？</li>
+        <li>地方企業・中小企業向けに紹介できるメニューを探していますか？</li>
+        </ul>
+        <p>提案:</p>
+        <ul>
+        <li>紹介制度</li>
+        <li>顧客向けセミナー登壇</li>
+        <li>20%値引きまたは紹介特典</li>
+        <li>地域中小企業向けパッケージ</li>
+        <li>オンライン全国対応</li>
+        </ul>
+        <hr />
+        </section>
+        </section>
+        <section id="4-代表の営業トーク詳細分析" class="level2">
+        <h2>4. 代表の営業トーク詳細分析</h2>
+        <section id="41-代表トークの基本構造" class="level3">
+        <h3>4.1 代表トークの基本構造</h3>
+        <p>代表の会話は、おおむね次の流れで進んでいます。</p>
+        <ol type="1">
+        <li><p>短い声かけ</p>
+        <ul>
+        <li>「健康経営のサポートをしています」</li>
+        <li>「従業員の健康状態を見える化しています」</li>
+        <li>「健康経営の工数を大幅削減できます」</li>
+        <li>「健康経営のROIまで見える化できます」</li>
+        </ul></li>
+        <li><p>相手のステージ確認</p>
+        <ul>
+        <li>健康経営はやっているか</li>
+        <li>認定は取得済みか、これからか</li>
+        <li>大規模法人か中小規模法人か</li>
+        <li>担当者本人か、資料収集役か</li>
+        <li>既存ベンダーはいるか</li>
+        </ul></li>
+        <li><p>課題のヒアリング</p>
+        <ul>
+        <li>何に困っているか</li>
+        <li>健診データやストレスチェックは活用できているか</li>
+        <li>社員の不調は何か</li>
+        <li>離職、夜勤、現場、高齢化など経営課題はあるか</li>
+        </ul></li>
+        <li><p>相手の文脈に合わせたリフレーミング</p>
+        <ul>
+        <li>人事には「工数削減」「施策効果」</li>
+        <li>経営層には「採用・離職・生産性」</li>
+        <li>現場には「足腰・転倒・労災」</li>
+        <li>健診ベンダーには「データ後のネクストアクション」</li>
+        <li>保険会社には「顧客企業への紹介商材」</li>
+        </ul></li>
+        <li><p>BODYPALETTEの強み提示</p>
+        <ul>
+        <li>アンケートで健康課題を見える化</li>
+        <li>ワースト課題に対して施策を打つ</li>
+        <li>医師から処方箋を受けて運動療法を提供している専門性</li>
+        <li>運動・食事・メンタル・女性・高齢者など幅広く対応</li>
+        <li>セミナー、eラーニング、オンサイト、オンライン、オンデマンド</li>
+        </ul></li>
+        <li><p>具体提案</p>
+        <ul>
+        <li>まず無料アンケート</li>
+        <li>3ヶ月プログラム</li>
+        <li>単発セミナー</li>
+        <li>東京・大阪など拠点別実施</li>
+        <li>役員説明用の資料化</li>
+        </ul></li>
+        <li><p>CTA</p>
+        <ul>
+        <li>QRコード取得</li>
+        <li>後日打ち合わせ</li>
+        <li>担当者紹介</li>
+        <li>資料送付</li>
+        <li>体験セミナー</li>
+        </ul></li>
+        </ol>
+        </section>
+        <section id="42-代表トークの強み" class="level3">
+        <h3>4.2 代表トークの強み</h3>
+        <section id="強み1-相手の業種状況に即座に合わせる"
+        class="level4">
+        <h4>強み1: 相手の業種・状況に即座に合わせる</h4>
+        <p>代表は、相手の業種や職種を聞いた瞬間に、話をかなり細かく変えています。</p>
+        <ul>
+        <li>ホテル・シフト勤務には、睡眠、夜勤、離職</li>
+        <li>警備・施設管理には、足腰、転倒、労災</li>
+        <li>健診ベンダーには、健診後フォロー、特保、API連携</li>
+        <li>保険会社・銀行には、顧客企業への紹介、手数料・値引き</li>
+        <li>人事・総務には、工数削減、更新、施策効果</li>
+        <li>経営企画には、採用、離職、生産性</li>
+        </ul>
+        <p>これは非常に強いです。ただし属人的です。今後は、スタッフが再現できるように「相手タイプ別トークカード」に落とすべきです。</p>
+        </section>
+        <section id="強み2-データを取るではなくデータの後を売っている"
+        class="level4">
+        <h4>強み2:
+        「データを取る」ではなく「データの後」を売っている</h4>
+        <p>代表は何度も、健診データ・ストレスチェック・アンケートは取って終わりになりがちだと話しています。</p>
+        <p>BODYPALETTEの強みは次です。</p>
+        <blockquote>
+        <p>データ取得後に、課題の優先順位をつけ、具体施策までやる。</p>
+        </blockquote>
+        <p>このポジションは展示会でかなり刺さっています。健康管理ツール、健診代行、ストレスチェックベンダーが多い場では、差別化しやすいです。</p>
+        </section>
+        <section id="強み3-医療連携運動療法の信頼性を出せる"
+        class="level4">
+        <h4>強み3: 医療連携・運動療法の信頼性を出せる</h4>
+        <p>代表は、原宿の施設、医師の処方箋、医療費控除、生活習慣病、整形外科、婦人科、精神科、循環器系などの経験を話しています。</p>
+        <p>これにより、単なるフィットネス企業ではなく、</p>
+        <blockquote>
+        <p>医療と企業健康経営の間をつなぐ会社</p>
+        </blockquote>
+        <p>として見えます。</p>
+        <p>展示会での訴求は、次の一文にするとわかりやすいです。</p>
+        <blockquote>
+        <p>私たちは、医師の処方を運動指導に翻訳してきた会社なので、企業の健康課題も「何をすればよいか」まで具体化できます。</p>
+        </blockquote>
+        </section>
+        <section id="強み4-具体例が多い" class="level4">
+        <h4>強み4: 具体例が多い</h4>
+        <p>録音内で出ていた具体例:</p>
+        <ul>
+        <li>従業員2000名の工場で転倒防止</li>
+        <li>警備会社1000名規模、現場80%以上</li>
+        <li>女性の痩せ・更年期プログラム</li>
+        <li>3ヶ月で数値改善を狙う特保向けプログラム</li>
+        <li>立ち仕事の足底筋膜炎・膝痛・股関節ケア</li>
+        <li>夜勤・シフト勤務の睡眠・食事課題</li>
+        <li>東京・大阪拠点別の実施</li>
+        <li>健診ベンダーとの連携</li>
+        </ul>
+        <p>これらは事例カード化すべきです。代表以外が話すときも、事例があるだけで信頼度が上がります。</p>
+        </section>
+        <section id="強み5-経営課題への接続がうまい" class="level4">
+        <h4>強み5: 経営課題への接続がうまい</h4>
+        <p>特に、事業拡大中の企業に対して「採用」「離職」「長く働ける環境」に接続していた点が強いです。</p>
+        <p>健康経営を福利厚生ではなく、経営課題の解決として語っています。</p>
+        <p>使える言い回し:</p>
+        <blockquote>
+        <p>事業拡大には人が必要です。採用だけでなく、辞めない環境づくりも必要です。そのための健康経営として設計しましょう。</p>
+        </blockquote>
+        </section>
+        </section>
+        <section id="43-代表トークの改善点" class="level3">
+        <h3>4.3 代表トークの改善点</h3>
+        <section id="改善点1-情報量が多く初回接点では重くなることがある"
+        class="level4">
+        <h4>改善点1: 情報量が多く、初回接点では重くなることがある</h4>
+        <p>代表は知識量が多く、相手が関心を持つと一気に深く話せます。一方で、展示会では相手の理解速度を超える可能性があります。</p>
+        <p>改善:</p>
+        <ul>
+        <li>最初の30秒は必ず短くする</li>
+        <li>相手が食いついたテーマだけ深掘る</li>
+        <li>「全部できます」ではなく「まず御社ならここです」と絞る</li>
+        </ul>
+        </section>
+        <section id="改善点2-声かけが日中で何度も変わっている"
+        class="level4">
+        <h4>改善点2: 声かけが日中で何度も変わっている</h4>
+        <p>録音中で声かけは何度も試行錯誤されています。</p>
+        <p>使われていた主な声かけ:</p>
+        <ul>
+        <li>健康経営のサポートをしています</li>
+        <li>従業員の健康状態を見える化しています</li>
+        <li>健康経営の工数を大幅削減できます</li>
+        <li>健康経営のROIを見える化できます</li>
+        <li>会社の健康課題を一緒に解決します</li>
+        <li>認定だけでなくリアルな課題解決まで行います</li>
+        </ul>
+        <p>反応がよさそうだったのは、単なる「健康経営サポート」よりも、次の2つです。</p>
+        <ul>
+        <li>「工数削減」</li>
+        <li>「ROI・費用対効果」</li>
+        </ul>
+        <p>ただし、健康経営未経験者には「工数削減」は刺さりにくいので、ステージ別に変えるべきです。</p>
+        </section>
+        <section id="改善点3-料金説明が複雑に聞こえる" class="level4">
+        <h4>改善点3: 料金説明が複雑に聞こえる</h4>
+        <p>録音では、月額、ID単価、基本料金、オンサイト、単発、契約企業向け価格、展示会価格、足代などが会話内で混ざります。</p>
+        <p>改善:</p>
+        <ul>
+        <li>展示会では3パッケージだけ出す</li>
+        <li>詳細見積もりは後日</li>
+        <li>「まず単発」「3ヶ月トライアル」「年間伴走」の3段階にする</li>
+        </ul>
+        <p>推奨パッケージ:</p>
+        <ol type="1">
+        <li><p>単発セミナー</p>
+        <ul>
+        <li>オンライン</li>
+        <li>オンサイト</li>
+        <li>課題別テーマ</li>
+        </ul></li>
+        <li><p>3ヶ月課題改善トライアル</p>
+        <ul>
+        <li>初回アンケート</li>
+        <li>月1セミナー</li>
+        <li>前後比較レポート</li>
+        </ul></li>
+        <li><p>年間伴走プラン</p>
+        <ul>
+        <li>健康経営申請・更新支援</li>
+        <li>月次モニタリング</li>
+        <li>eラーニング</li>
+        <li>オープンセッション</li>
+        <li>カスタム施策</li>
+        </ul></li>
+        </ol>
+        </section>
+        <section id="改善点4-何でもできますは便利だが印象がぼやける"
+        class="level4">
+        <h4>改善点4: 「何でもできます」は便利だが、印象がぼやける</h4>
+        <p>代表は本当に広く対応できるため「何でもできます」と言えます。ただ、来場者には選びづらくなります。</p>
+        <p>改善:</p>
+        <blockquote>
+        <p>何でもできますが、御社の場合はまず「〇〇」からです。</p>
+        </blockquote>
+        <p>この形にする。</p>
+        <p>例:</p>
+        <ul>
+        <li>現場企業: 「まず転倒防止と足腰ケアです」</li>
+        <li>既取得企業: 「まず施策効果の見える化です」</li>
+        <li>初取得企業: 「まず申請要件と健康課題の棚卸しです」</li>
+        <li>健診ベンダー: 「まず健診後フォローです」</li>
+        </ul>
+        </section>
+        <section id="改善点5-制度医療効果の表現は慎重に整える"
+        class="level4">
+        <h4>改善点5: 制度・医療・効果の表現は慎重に整える</h4>
+        <p>医療費控除、処方箋、助成金、認定要件、数値改善などは非常に強い一方で、誤解があるとリスクがあります。</p>
+        <p>改善:</p>
+        <ul>
+        <li>展示会用の「言ってよい表現集」を作る</li>
+        <li>「保証」ではなく「改善を目指す」「支援する」「設計する」と言う</li>
+        <li>最新制度は「確認のうえご案内します」とする</li>
+        <li>医療行為ではなく「運動指導」「生活習慣改善支援」と明確化する</li>
+        </ul>
+        <hr />
+        </section>
+        </section>
+        </section>
+        <section id="5-次回展示会用トーク設計" class="level2">
+        <h2>5. 次回展示会用トーク設計</h2>
+        <section id="51-最初の声かけテンプレート" class="level3">
+        <h3>5.1 最初の声かけテンプレート</h3>
+        <section id="汎用" class="level4">
+        <h4>汎用</h4>
+        <blockquote>
+        <p>健康経営の認定更新と、社員の健康課題の見える化・改善まで支援しています。</p>
+        </blockquote>
+        </section>
+        <section id="既に健康経営をやっていそうな人向け" class="level4">
+        <h4>既に健康経営をやっていそうな人向け</h4>
+        <blockquote>
+        <p>健康経営、毎年の更新や施策の効果測定で困っていませんか？</p>
+        </blockquote>
+        </section>
+        <section id="人事総務向け" class="level4">
+        <h4>人事・総務向け</h4>
+        <blockquote>
+        <p>健康経営の担当者工数を減らしながら、社員の不調まで見える化できます。</p>
+        </blockquote>
+        </section>
+        <section id="経営企画経営層向け" class="level4">
+        <h4>経営企画・経営層向け</h4>
+        <blockquote>
+        <p>健康経営を、採用・離職・生産性の改善に接続する支援をしています。</p>
+        </blockquote>
+        </section>
+        <section id="現場系施設系向け" class="level4">
+        <h4>現場系・施設系向け</h4>
+        <blockquote>
+        <p>現場の足腰・転倒・疲労など、リアルな健康課題に合わせた施策を作れます。</p>
+        </blockquote>
+        </section>
+        <section id="健診健康管理システム事業者向け" class="level4">
+        <h4>健診・健康管理システム事業者向け</h4>
+        <blockquote>
+        <p>健診データやストレスチェックの後の、具体的な改善施策を一緒に作れます。</p>
+        </blockquote>
+        </section>
+        <section id="認定に懐疑的な人向け" class="level4">
+        <h4>認定に懐疑的な人向け</h4>
+        <blockquote>
+        <p>認定のためだけではなく、社員の実際の不調を見つけて改善する健康経営です。</p>
+        </blockquote>
+        </section>
+        </section>
+        <section id="52-30秒トーク" class="level3">
+        <h3>5.2 30秒トーク</h3>
+        <blockquote>
+        <p>BODYPALETTEは、健康経営の認定サポートだけでなく、社員の健康状態をアンケートで見える化して、課題に合わせたセミナーや運動施策まで実行するサービスです。健診やストレスチェックは取って終わりになりがちですが、当社は「次に何をするか」まで伴走します。肩こり・腰痛・眼精疲労・睡眠・運動不足・特定保健指導・高齢者の転倒防止など、御社の課題に合わせて設計できます。</p>
+        </blockquote>
+        </section>
+        <section id="53-2分トーク" class="level3">
+        <h3>5.3 2分トーク</h3>
+        <blockquote>
+        <p>健康経営は、認定を取ること自体よりも、その後に社員の健康課題をどう改善するかが重要です。多くの企業では、健診データやストレスチェックは取っているものの、そこから何をすべきかが見えていません。</p>
+        <p>BODYPALETTEでは、まず18項目のアンケートで体調、睡眠、食事、運動習慣、ストレス、プレゼンティーズムなどを見える化します。その結果をもとに、例えば肩こり・腰痛が多ければオフィスでできるストレッチ、夜勤者が多ければ睡眠・食事、シニア現場職が多ければ転倒防止、特保該当者が多ければ3ヶ月改善プログラムというように、施策まで実行します。</p>
+        <p>もともと当社は医師と連携して運動療法を提供している背景があるので、単なる福利厚生ではなく、健康課題に合わせた専門的な施策設計ができます。</p>
+        </blockquote>
+        </section>
+        <section id="54-深掘り質問リスト" class="level3">
+        <h3>5.4 深掘り質問リスト</h3>
+        <p>最初に聞く:</p>
+        <ul>
+        <li>健康経営はすでに取り組まれていますか？</li>
+        <li>認定は取得済みですか、それともこれからですか？</li>
+        <li>ご担当は人事・総務の方ですか？</li>
+        <li>従業員数は何名くらいですか？</li>
+        </ul>
+        <p>課題を聞く:</p>
+        <ul>
+        <li>今、一番困っているのは申請工数ですか、施策内容ですか、効果測定ですか？</li>
+        <li>健診データやストレスチェックは活用できていますか？</li>
+        <li>社員の不調は何が多そうですか？</li>
+        <li>現場職、デスクワーク、シフト勤務のどれが多いですか？</li>
+        <li>離職、休職、体力、睡眠、メンタルの課題はありますか？</li>
+        </ul>
+        <p>提案につなげる:</p>
+        <ul>
+        <li>まず無料アンケートで課題を見える化してみませんか？</li>
+        <li>御社なら最初は〇〇のテーマがよさそうです。</li>
+        <li>単発で試すか、3ヶ月で前後比較する形が合いそうです。</li>
+        <li>担当者様向けに、後日15分だけオンラインでご説明できます。</li>
+        </ul>
+        </section>
+        <section id="55-クロージングの型" class="level3">
+        <h3>5.5 クロージングの型</h3>
+        <section id="qr取得" class="level4">
+        <h4>QR取得</h4>
+        <blockquote>
+        <p>具体的な資料と、無料アンケートのご案内をお送りしますので、こちらだけ読み取っていただいてもよろしいですか？</p>
+        </blockquote>
+        </section>
+        <section id="後日商談" class="level4">
+        <h4>後日商談</h4>
+        <blockquote>
+        <p>今日のお話だと、御社は〇〇が課題になりそうです。そこに絞って15分で具体案をお持ちしたいので、後日お時間いただけますか？</p>
+        </blockquote>
+        </section>
+        <section id="担当者紹介" class="level4">
+        <h4>担当者紹介</h4>
+        <blockquote>
+        <p>もし本来のご担当者様が別にいらっしゃれば、その方宛てに「御社なら〇〇の話が合いそうです」と短くお送りします。</p>
+        </blockquote>
+        </section>
+        <section id="体験提案" class="level4">
+        <h4>体験提案</h4>
+        <blockquote>
+        <p>社員の方に一度体験していただくとかなり伝わりやすいので、単発のオンラインまたはオンサイトで試す形もできます。</p>
+        </blockquote>
+        <hr />
+        </section>
+        </section>
+        </section>
+        <section id="6-需要別-提案メニュー化" class="level2">
+        <h2>6. 需要別 提案メニュー化</h2>
+        <section id="61-展示会後すぐ売れる可能性が高いメニュー"
+        class="level3">
+        <h3>6.1 展示会後すぐ売れる可能性が高いメニュー</h3>
+        <section id="a-健康課題-無料診断" class="level4">
+        <h4>A. 健康課題 無料診断</h4>
+        <p>内容:</p>
+        <ul>
+        <li>18項目アンケート</li>
+        <li>部署・年代・職種別の簡易分析</li>
+        <li>ワースト課題の抽出</li>
+        <li>推奨施策の提案</li>
+        </ul>
+        <p>刺さる相手:</p>
+        <ul>
+        <li>課題が見えていない企業</li>
+        <li>福利厚生が使われていない企業</li>
+        <li>初回商談化したいリード</li>
+        </ul>
+        <p>展示会での言い方:</p>
+        <blockquote>
+        <p>まず御社の健康課題が何か、無料アンケートで見える化できます。</p>
+        </blockquote>
+        </section>
+        <section id="b-単発オンサイトオンラインセミナー" class="level4">
+        <h4>B. 単発オンサイト・オンラインセミナー</h4>
+        <p>内容:</p>
+        <ul>
+        <li>肩こり・腰痛・眼精疲労</li>
+        <li>睡眠・疲労回復</li>
+        <li>転倒防止</li>
+        <li>女性の健康課題・更年期</li>
+        <li>高齢者・ロコモ・フレイル</li>
+        <li>特保・生活習慣病予防</li>
+        </ul>
+        <p>刺さる相手:</p>
+        <ul>
+        <li>今年の施策に困っている企業</li>
+        <li>認定要件に間に合わせたい企業</li>
+        <li>まず体験したい企業</li>
+        </ul>
+        <p>展示会での言い方:</p>
+        <blockquote>
+        <p>まず単発で、御社の課題に合わせたセミナーから始められます。</p>
+        </blockquote>
+        </section>
+        <section id="c-3ヶ月-roiトライアル" class="level4">
+        <h4>C. 3ヶ月 ROIトライアル</h4>
+        <p>内容:</p>
+        <ul>
+        <li>初回アンケート</li>
+        <li>課題別セミナー</li>
+        <li>月次モニタリング</li>
+        <li>前後比較レポート</li>
+        <li>経営層向け報告</li>
+        </ul>
+        <p>刺さる相手:</p>
+        <ul>
+        <li>効果測定を重視する企業</li>
+        <li>経営層承認が必要な企業</li>
+        <li>施策をやっても成果が見えない企業</li>
+        </ul>
+        <p>展示会での言い方:</p>
+        <blockquote>
+        <p>3ヶ月だけでも、施策前後の変化を見える化できます。</p>
+        </blockquote>
+        </section>
+        <section id="d-健診後フォロー特保改善プログラム" class="level4">
+        <h4>D. 健診後フォロー・特保改善プログラム</h4>
+        <p>内容:</p>
+        <ul>
+        <li>健診データ連携</li>
+        <li>特保該当者抽出</li>
+        <li>3ヶ月改善プログラム</li>
+        <li>運動・食事・生活習慣指導</li>
+        <li>数値改善レポート</li>
+        </ul>
+        <p>刺さる相手:</p>
+        <ul>
+        <li>健保組合を持つ企業</li>
+        <li>健診センター</li>
+        <li>健診管理ツール事業者</li>
+        <li>大企業人事</li>
+        </ul>
+        <p>展示会での言い方:</p>
+        <blockquote>
+        <p>健診データを取った後の、特保該当者を減らす具体施策までできます。</p>
+        </blockquote>
+        </section>
+        <section id="e-現場職向け-フィジカルリスク対策" class="level4">
+        <h4>E. 現場職向け フィジカルリスク対策</h4>
+        <p>内容:</p>
+        <ul>
+        <li>転倒防止</li>
+        <li>足底筋膜炎・膝痛・腰痛</li>
+        <li>立ち仕事ケア</li>
+        <li>60歳以上の従業員向け体力維持</li>
+        <li>労災予防文脈のセミナー</li>
+        </ul>
+        <p>刺さる相手:</p>
+        <ul>
+        <li>警備</li>
+        <li>施設管理</li>
+        <li>工場</li>
+        <li>物流</li>
+        <li>販売</li>
+        <li>福祉</li>
+        <li>ホテル</li>
+        </ul>
+        <p>展示会での言い方:</p>
+        <blockquote>
+        <p>現場の足腰や転倒リスクまで、実際の働き方に合わせて対策できます。</p>
+        </blockquote>
+        <hr />
+        </section>
+        </section>
+        </section>
+        <section id="7-展示会運用の分析" class="level2">
+        <h2>7. 展示会運用の分析</h2>
+        <section id="71-ブースで反応が取れていた要素" class="level3">
+        <h3>7.1 ブースで反応が取れていた要素</h3>
+        <p>反応が取れていたもの:</p>
+        <ul>
+        <li>アバター接客の物珍しさ</li>
+        <li>「健康経営の工数削減」</li>
+        <li>「ROI・費用対効果」</li>
+        <li>「健康状態の見える化」</li>
+        <li>「具体的な課題解決まで伴走」</li>
+        <li>「単発セミナーも可能」</li>
+        <li>代表本人の専門性と具体例</li>
+        <li>医療連携・運動療法処方箋の話</li>
+        </ul>
+        <p>一方で、アバターは足止め・話題化には役立つものの、商談化は人の介入が必要です。アバターで興味を引き、人が質問で選別する設計がよさそうです。</p>
+        </section>
+        <section id="72-声かけで試されていた軸" class="level3">
+        <h3>7.2 声かけで試されていた軸</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>声かけ</th>
+        <th>向いている相手</th>
+        <th>コメント</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>健康経営のサポートをしています</td>
+        <td>汎用</td>
+        <td>弱くはないが差別化は薄い</td>
+        </tr>
+        <tr>
+        <td>従業員の健康状態を見える化しています</td>
+        <td>人事・総務</td>
+        <td>説明につなげやすい</td>
+        </tr>
+        <tr>
+        <td>健康経営の工数を大幅削減できます</td>
+        <td>既取得企業</td>
+        <td>足を止めやすい</td>
+        </tr>
+        <tr>
+        <td>健康経営のROIを見える化できます</td>
+        <td>経営企画・大企業</td>
+        <td>刺さると深い</td>
+        </tr>
+        <tr>
+        <td>会社の健康課題を一緒に解決します</td>
+        <td>認定懐疑派・本質派</td>
+        <td>BODYPALETTEらしい</td>
+        </tr>
+        <tr>
+        <td>認定だけでなくリアルな課題解決まで</td>
+        <td>既取得・マンネリ企業</td>
+        <td>差別化が強い</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>推奨:</p>
+        <ul>
+        <li>午前・初回接点は「工数削減」「見える化」</li>
+        <li>人事・総務には「更新が楽になる」</li>
+        <li>経営層には「ROI」</li>
+        <li>現場系には「足腰・転倒・疲労」</li>
+        <li>健診ベンダーには「健診後の次の一手」</li>
+        </ul>
+        </section>
+        <section id="73-来場者の見分け方" class="level3">
+        <h3>7.3 来場者の見分け方</h3>
+        <p>録音内で言及されていた有望層:</p>
+        <ul>
+        <li>人事</li>
+        <li>総務</li>
+        <li>経営企画</li>
+        <li>経営者</li>
+        <li>DX・IT</li>
+        <li>健康経営担当者</li>
+        <li>健診・健康管理システム関係者</li>
+        <li>保険・金融・地域支援系</li>
+        <li>現場管理・労働衛生管理者</li>
+        </ul>
+        <p>会話の入り口:</p>
+        <ul>
+        <li>名札の部署を見て声かけを変える</li>
+        <li>「健康経営やられていますか？」だけでなく「担当者工数」「ROI」「現場の足腰」など相手に合わせる</li>
+        <li>資料収集役には、担当者に渡しやすい一言を添える</li>
+        </ul>
+        </section>
+        <section id="74-展示会後フォローの優先順位" class="level3">
+        <h3>7.4 展示会後フォローの優先順位</h3>
+        <section id="sランク-すぐ商談化" class="level4">
+        <h4>Sランク: すぐ商談化</h4>
+        <p>条件:</p>
+        <ul>
+        <li>具体課題を話している</li>
+        <li>名刺交換・QR取得済み</li>
+        <li>後日打ち合わせの流れがある</li>
+        <li>予算・日程・拠点・人数の話が出た</li>
+        </ul>
+        <p>該当例:</p>
+        <ul>
+        <li>既取得で経営層説得・離職・睡眠・シフト課題がある企業</li>
+        <li>現場の足底筋膜炎・労災・転倒防止課題が具体的な企業</li>
+        <li>健診システム乗り換え検討中で特保連携に関心がある企業</li>
+        <li>東京・大阪で運動スタッフ派遣を検討した企業</li>
+        </ul>
+        <p>フォロー内容:</p>
+        <ul>
+        <li>当日話した課題を1行で振り返る</li>
+        <li>「御社ならまず〇〇」と提案</li>
+        <li>15-30分のオンライン商談打診</li>
+        </ul>
+        </section>
+        <section id="aランク-育成すべき" class="level4">
+        <h4>Aランク: 育成すべき</h4>
+        <p>条件:</p>
+        <ul>
+        <li>健康経営に関心あり</li>
+        <li>課題は曖昧</li>
+        <li>担当者ではない</li>
+        <li>資料収集段階</li>
+        </ul>
+        <p>フォロー内容:</p>
+        <ul>
+        <li>無料アンケート案内</li>
+        <li>セミナー一覧送付</li>
+        <li>担当者紹介依頼</li>
+        </ul>
+        </section>
+        <section id="bランク-パートナー候補" class="level4">
+        <h4>Bランク: パートナー候補</h4>
+        <p>条件:</p>
+        <ul>
+        <li>健診・ストレスチェック・アプリ・デバイス・保険・医療機関</li>
+        <li>自社顧客への紹介や連携余地あり</li>
+        </ul>
+        <p>フォロー内容:</p>
+        <ul>
+        <li>「データ取得後の施策実行を担える」資料</li>
+        <li>共同提案パターン</li>
+        <li>API/紹介/共同PRの選択肢</li>
+        </ul>
+        </section>
+        <section id="cランク-情報収集" class="level4">
+        <h4>Cランク: 情報収集</h4>
+        <p>条件:</p>
+        <ul>
+        <li>担当ではない</li>
+        <li>チラシだけ</li>
+        <li>興味が薄い</li>
+        </ul>
+        <p>フォロー内容:</p>
+        <ul>
+        <li>短い資料送付のみ</li>
+        <li>反応があれば育成</li>
+        </ul>
+        <hr />
+        </section>
+        </section>
+        </section>
+        <section id="8-今後の展示会で誰でも話せるようにするための型"
+        class="level2">
+        <h2>8. 今後の展示会で誰でも話せるようにするための型</h2>
+        <section id="81-まず覚えるべき一文" class="level3">
+        <h3>8.1 まず覚えるべき一文</h3>
+        <blockquote>
+        <p>BODYPALETTEは、健康経営の認定取得・更新だけでなく、社員の健康課題を見える化し、具体的な施策まで実行する伴走型サービスです。</p>
+        </blockquote>
+        </section>
+        <section id="82-次に覚えるべき3つの強み" class="level3">
+        <h3>8.2 次に覚えるべき3つの強み</h3>
+        <ol type="1">
+        <li>データで課題を見える化する</li>
+        <li>課題に合わせてセミナー・運動施策まで実行する</li>
+        <li>医療連携した運動指導の専門性がある</li>
+        </ol>
+        </section>
+        <section id="83-相手別の一言変換" class="level3">
+        <h3>8.3 相手別の一言変換</h3>
+        <table>
+        <thead>
+        <tr>
+        <th>相手</th>
+        <th>一言</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>健康経営担当</td>
+        <td>更新工数を下げながら、施策効果まで見える化できます</td>
+        </tr>
+        <tr>
+        <td>初めての企業</td>
+        <td>申請に必要な土台づくりから支援できます</td>
+        </tr>
+        <tr>
+        <td>経営層</td>
+        <td>採用・離職・生産性に効く健康経営にできます</td>
+        </tr>
+        <tr>
+        <td>現場系企業</td>
+        <td>足腰・転倒・疲労など現場の不調に合わせた施策ができます</td>
+        </tr>
+        <tr>
+        <td>健診ベンダー</td>
+        <td>健診後の具体的な改善施策を担えます</td>
+        </tr>
+        <tr>
+        <td>福利厚生担当</td>
+        <td>使われる福利厚生にするために、社員の課題から設計できます</td>
+        </tr>
+        <tr>
+        <td>認定懐疑派</td>
+        <td>認定のためでなく、社員の実課題を改善する設計です</td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section id="84-誰でも使える会話フロー" class="level3">
+        <h3>8.4 誰でも使える会話フロー</h3>
+        <ol type="1">
+        <li><p>声かけ</p>
+        <ul>
+        <li>「健康経営はもう取り組まれていますか？」</li>
+        </ul></li>
+        <li><p>ステージ確認</p>
+        <ul>
+        <li>「認定は取得済みですか？これからですか？」</li>
+        </ul></li>
+        <li><p>困りごと確認</p>
+        <ul>
+        <li>「工数、施策内容、効果測定だと、どこが一番大変ですか？」</li>
+        </ul></li>
+        <li><p>課題仮説</p>
+        <ul>
+        <li>「御社だと、まず〇〇がテーマになりそうですね」</li>
+        </ul></li>
+        <li><p>サービス説明</p>
+        <ul>
+        <li>「アンケートで課題を見える化して、課題に合わせたセミナーまで行います」</li>
+        </ul></li>
+        <li><p>具体例</p>
+        <ul>
+        <li>「例えば現場なら転倒防止、デスクワークなら肩こり・眼精疲労、シフト勤務なら睡眠・食事です」</li>
+        </ul></li>
+        <li><p>CTA</p>
+        <ul>
+        <li>「無料診断のご案内を送るので、QRだけお願いできますか？」</li>
+        </ul></li>
+        </ol>
+        </section>
+        <section id="85-代表っぽさを再現するための話し方"
+        class="level3">
+        <h3>8.5 代表っぽさを再現するための話し方</h3>
+        <p>代表の話し方の特徴:</p>
+        <ul>
+        <li>相手の言葉を拾う</li>
+        <li>すぐに「それなら〇〇ですね」と具体化する</li>
+        <li>健康施策を経営課題に接続する</li>
+        <li>「取って終わりじゃない」と繰り返す</li>
+        <li>専門性を出しつつ、相手の業務負担を下げる話に戻す</li>
+        <li>最後は必ず次アクションを取る</li>
+        </ul>
+        <p>スタッフが真似すべき言い回し:</p>
+        <ul>
+        <li>「まず課題を見える化しましょう」</li>
+        <li>「御社の場合は〇〇からがよさそうです」</li>
+        <li>「データを取って終わりではなく、次に何をするかまで支援します」</li>
+        <li>「認定だけでなく、社員にちゃんと効く施策にしましょう」</li>
+        <li>「まずは単発でも、無料アンケートでも始められます」</li>
+        </ul>
+        <hr />
+        </section>
+        </section>
+        <section id="9-追加で見るべき分析観点" class="level2">
+        <h2>9. 追加で見るべき分析観点</h2>
+        <section id="91-リードスコア分析" class="level3">
+        <h3>9.1 リードスコア分析</h3>
+        <p>今後は各リードを次の軸で点数化するとよいです。</p>
+        <table>
+        <thead>
+        <tr>
+        <th>軸</th>
+        <th>高スコア条件</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>課題の明確さ</td>
+        <td>具体的な不調・工数・離職・健診課題を話している</td>
+        </tr>
+        <tr>
+        <td>決裁への近さ</td>
+        <td>人事・総務・経営企画・役員・責任者</td>
+        </tr>
+        <tr>
+        <td>時期の近さ</td>
+        <td>申請前、今年施策を探している、日程の話が出た</td>
+        </tr>
+        <tr>
+        <td>予算可能性</td>
+        <td>料金・人数・拠点の話が出た</td>
+        </tr>
+        <tr>
+        <td>パートナー性</td>
+        <td>自社顧客に紹介できる、データ連携できる</td>
+        </tr>
+        <tr>
+        <td>BODYPALETTE適合度</td>
+        <td>運動・健診後フォロー・フィジカル課題が強い</td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section id="92-商品パッケージ分析" class="level3">
+        <h3>9.2 商品パッケージ分析</h3>
+        <p>今回の録音から、商品は次のように整理すると売りやすくなります。</p>
+        <ol type="1">
+        <li>無料診断</li>
+        <li>単発セミナー</li>
+        <li>3ヶ月改善トライアル</li>
+        <li>年間健康経営伴走</li>
+        <li>特保・健診後フォロー</li>
+        <li>現場向け転倒・足腰対策</li>
+        <li>女性・高齢者要件対応</li>
+        <li>パートナー向けOEM/紹介プラン</li>
+        </ol>
+        </section>
+        <section id="93-資料不足分析" class="level3">
+        <h3>9.3 資料不足分析</h3>
+        <p>次回までに必要な資料:</p>
+        <ul>
+        <li>セミナー一覧表</li>
+        <li>料金の3プラン表</li>
+        <li>相手タイプ別1枚資料</li>
+        <li>健康経営申請・更新サポート資料</li>
+        <li>ROI・プレゼンティーズム説明資料</li>
+        <li>健診後フォロー・特保改善資料</li>
+        <li>現場職向け転倒防止資料</li>
+        <li>女性・更年期・高齢者向け資料</li>
+        <li>パートナー連携資料</li>
+        <li>事例カード</li>
+        <li>言ってよい制度・医療表現集</li>
+        </ul>
+        </section>
+        <section id="94-競合代替手段分析" class="level3">
+        <h3>9.4 競合・代替手段分析</h3>
+        <p>来場者の頭の中にある代替手段:</p>
+        <ul>
+        <li>健診管理システム</li>
+        <li>ストレスチェックツール</li>
+        <li>健診代行</li>
+        <li>産業医サービス</li>
+        <li>福利厚生サービス</li>
+        <li>社食・食事サービス</li>
+        <li>睡眠サービス</li>
+        <li>ウェアラブル・アプリ</li>
+        <li>地域ジム・ヨガ講師</li>
+        <li>中小企業診断士や社労士の申請支援</li>
+        </ul>
+        <p>BODYPALETTEの勝ち筋:</p>
+        <blockquote>
+        <p>ツールだけ、セミナーだけ、申請支援だけではなく、データ管理・課題特定・施策実行・専門家連携・振り返りまで一気通貫。</p>
+        </blockquote>
+        </section>
+        <section id="95-リスク分析" class="level3">
+        <h3>9.5 リスク分析</h3>
+        <p>注意すべき点:</p>
+        <ul>
+        <li>医療・制度に関する説明は正確性が必要</li>
+        <li>健康データを扱うため、個人情報・権限管理の説明が必要</li>
+        <li>効果保証のように聞こえる表現は避ける</li>
+        <li>料金が複雑だと不安になる</li>
+        <li>「何でもできます」だけだと特徴がぼやける</li>
+        <li>代表以外が話すと専門性の深さが再現しにくい</li>
+        </ul>
+        <p>対応:</p>
+        <ul>
+        <li>FAQを作る</li>
+        <li>禁止表現・推奨表現を作る</li>
+        <li>料金表を簡略化する</li>
+        <li>トークカードを作る</li>
+        <li>事例で話す</li>
+        </ul>
+        <hr />
+        </section>
+        </section>
+        <section id="10-展示会後の具体アクション" class="level2">
+        <h2>10. 展示会後の具体アクション</h2>
+        <section id="最優先" class="level3">
+        <h3>最優先</h3>
+        <ol type="1">
+        <li><p>名刺・QRリードを、課題別にタグ付けする</p>
+        <ul>
+        <li>認定更新</li>
+        <li>初取得</li>
+        <li>工数削減</li>
+        <li>ROI</li>
+        <li>健診後フォロー</li>
+        <li>特保</li>
+        <li>現場・転倒</li>
+        <li>女性・高齢者</li>
+        <li>パートナー</li>
+        </ul></li>
+        <li><p>Sランクリードには48時間以内に個別メール</p>
+        <ul>
+        <li>会話内容を1行で振り返る</li>
+        <li>御社向けの仮説を1つ出す</li>
+        <li>商談候補日を出す</li>
+        </ul></li>
+        <li><p>セミナー一覧と料金表を即作成</p>
+        <ul>
+        <li>単発</li>
+        <li>3ヶ月</li>
+        <li>年間</li>
+        </ul></li>
+        <li><p>「無料健康課題診断」を商品化</p>
+        <ul>
+        <li>展示会フォローで使う</li>
+        <li>商談化の入口にする</li>
+        </ul></li>
+        </ol>
+        </section>
+        <section id="次回展示会まで" class="level3">
+        <h3>次回展示会まで</h3>
+        <ol type="1">
+        <li>スタッフ用トークカード作成</li>
+        <li>相手タイプ別の質問表作成</li>
+        <li>事例カード作成</li>
+        <li>アバター接客の役割整理</li>
+        <li>声かけA/Bテスト設計</li>
+        <li>商談メモの統一フォーマット作成</li>
+        <li>パートナー候補向け提案資料作成</li>
+        </ol>
+        <hr />
+        </section>
+        </section>
+        <section id="11-まとめ" class="level2">
+        <h2>11. まとめ</h2>
+        <p>今回の展示会で見えたBODYPALETTEの勝ち筋は、非常にはっきりしています。</p>
+        <blockquote>
+        <p>健康経営を「認定取得」から「実際の健康課題解決」に進めたい企業に対して、データ・専門性・施策実行・効果測定を一気通貫で提供できること。</p>
+        </blockquote>
+        <p>代表の話し方は強力ですが、現状は属人性が高いです。今後誰でも話せるようにするには、次の3つに落とすのが最も重要です。</p>
+        <ol type="1">
+        <li>相手タイプ別の一言訴求</li>
+        <li>課題別の提案メニュー</li>
+        <li>事例ベースの短い説明</li>
+        </ol>
+        <p>展示会では、まず「健康経営やっていますか？」で入る。その後、相手のステージによって「工数削減」「ROI」「現場課題」「健診後フォロー」「認定ではなく本質改善」に切り替える。これが最も再現性の高い営業設計です。</p>
+        </section>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="back-to-top" type="button" aria-label="先頭へ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    (() => {
+      const links = Array.from(document.querySelectorAll('.toc-panel a[href^="#"]'));
+      const headings = links
+        .map(link => document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1))))
+        .filter(Boolean);
+      const byId = new Map(links.map(link => [decodeURIComponent(link.getAttribute('href').slice(1)), link]));
+
+      const setActive = () => {
+        let current = headings[0];
+        const y = window.scrollY + 120;
+        for (const heading of headings) {
+          if (heading.offsetTop <= y) current = heading;
+          else break;
+        }
+        links.forEach(link => link.classList.remove('active'));
+        if (current && byId.has(current.id)) byId.get(current.id).classList.add('active');
+      };
+
+      document.addEventListener('scroll', setActive, { passive: true });
+      window.addEventListener('load', setActive);
+      setActive();
+    })();
+  </script>
+</body>
+</html>
